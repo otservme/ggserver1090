@@ -1,0 +1,69 @@
+Performing C++ SOURCE FILE Test COMPILER_KNOWS_STDLIB failed with the following output:
+Change Dir: /home/otserv/ggserver1090/sources/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec230169770/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec230169770.dir/build.make CMakeFiles/cmTryCompileExec230169770.dir/build
+make[1]: Entering directory `/home/otserv/ggserver1090/sources/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/otserv/ggserver1090/sources/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec230169770.dir/src.cxx.o
+/usr/bin/c++    -Wall -Werror -pipe -fno-strict-aliasing -std=c++11 -DCOMPILER_KNOWS_STDLIB   -stdlib=libc++ -o CMakeFiles/cmTryCompileExec230169770.dir/src.cxx.o -c /home/otserv/ggserver1090/sources/build/CMakeFiles/CMakeTmp/src.cxx
+c++: error: unrecognized command line option '-stdlib=libc++'
+make[1]: *** [CMakeFiles/cmTryCompileExec230169770.dir/src.cxx.o] Error 1
+make[1]: Leaving directory `/home/otserv/ggserver1090/sources/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec230169770/fast] Error 2
+
+Source file was:
+int main() { return 0;}
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/otserv/ggserver1090/sources/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec454874960/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec454874960.dir/build.make CMakeFiles/cmTryCompileExec454874960.dir/build
+make[1]: Entering directory `/home/otserv/ggserver1090/sources/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/otserv/ggserver1090/sources/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec454874960.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec454874960.dir/CheckSymbolExists.c.o   -c /home/otserv/ggserver1090/sources/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec454874960
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec454874960.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec454874960.dir/CheckSymbolExists.c.o  -o cmTryCompileExec454874960 -rdynamic 
+CMakeFiles/cmTryCompileExec454874960.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x16): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+make[1]: *** [cmTryCompileExec454874960] Error 1
+make[1]: Leaving directory `/home/otserv/ggserver1090/sources/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec454874960/fast] Error 2
+
+File /home/otserv/ggserver1090/sources/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/otserv/ggserver1090/sources/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec664212410/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec664212410.dir/build.make CMakeFiles/cmTryCompileExec664212410.dir/build
+make[1]: Entering directory `/home/otserv/ggserver1090/sources/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/otserv/ggserver1090/sources/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec664212410.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec664212410.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec664212410
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec664212410.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec664212410.dir/CheckFunctionExists.c.o  -o cmTryCompileExec664212410 -rdynamic -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+make[1]: *** [cmTryCompileExec664212410] Error 1
+make[1]: Leaving directory `/home/otserv/ggserver1090/sources/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec664212410/fast] Error 2
+
+
